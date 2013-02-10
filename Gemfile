@@ -24,7 +24,8 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'therubyracer'              
+  gem 'libv8', '3.11.8.13' 
+  gem 'therubyracer', '0.11.3'        
   gem 'sass-rails', "  ~> 3.1.0"
   gem 'coffee-rails', "~> 3.1.0"
   gem 'uglifier'
@@ -40,3 +41,13 @@ gem 'jquery-rails'
 
 # To use debugger
 gem 'haml'
+
+# add to end of Gemfile
+group :test, :development do
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
+  gem 'database_cleaner' # to clear Cucumber's test database between runs
+  gem 'capybara'         # lets Cucumber pretend to be a web browser
+  gem 'launchy'          # a useful debugging aid for user stories
+  gem 'rspec-rails'
+end

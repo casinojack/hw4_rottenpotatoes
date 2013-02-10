@@ -1,4 +1,5 @@
 Rottenpotatoes::Application.routes.draw do
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,6 +13,9 @@ Rottenpotatoes::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+
+  match 'movies/:id/filter_by_director' => 'movies#filter_by_director', :as => :filter_by_director
+
   resources :movies
 
   # Sample resource route with options:
